@@ -5,6 +5,7 @@ from langchain_community.document_loaders import UnstructuredHTMLLoader
 from langchain_openai import OpenAI, OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from consts import INDEX_NAME
 
 # from langchain import VectorDBQA, OpenAI
 
@@ -27,7 +28,7 @@ def ingest_docs()->None:
 
     print(f"Going to insert {len(documents)} to Pinecone")
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
-    docsearch = PineconeVectorStore.from_documents(documents, embeddings, index_name="langchain-doc-index")
+    docsearch = PineconeVectorStore.from_documents(documents, embeddings, index_name=INDEX_NAME)
 
     print("******* Added to Pinecone Vectorstore")
     
