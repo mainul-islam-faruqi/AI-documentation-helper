@@ -11,6 +11,7 @@ PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 
 # INDEX_NAME = "langchain-doc-index"
 
+
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     docsearch = PineconeVectorStore(embedding=embeddings, index_name=INDEX_NAME)
@@ -25,5 +26,6 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     )
     return qa.invoke({"question": query, "chat_history": chat_history})
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     answer = run_llm("What is langchain?", [])

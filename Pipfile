@@ -25,6 +25,7 @@ langchain-openai = "*"
 python-dotenv = "*"
 langchainhub = "*"
 qrcode = "*"
+langchain-experimental = "*"
 
 [dev-packages]
 
