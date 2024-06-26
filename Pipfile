@@ -27,6 +27,7 @@ langchainhub = "*"
 qrcode = "*"
 langchain-experimental = "*"
 pandas = "*"
+langchain-core = "*"
 
 [dev-packages]
 
